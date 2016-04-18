@@ -1,9 +1,4 @@
 <div id="header-menu">
-<div class="material-load-bar">
-      <div class="material-bar"></div>
-      <div class="material-bar"></div>
-      <div class="material-bar"></div>
-    </div>
 <header id="header" component="navbar">
     <ul class="header-inner">
         <li id="menu-trigger" data-trigger="#sidebar" <!-- IF config.menuInHeader -->class="menu-header"<!-- ENDIF config.menuInHeader -->>
