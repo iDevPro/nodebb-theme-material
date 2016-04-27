@@ -4,11 +4,11 @@
   "nbbpm": {
     "compatibility": "^1.0.0"
   },
-  "description": "Material Design theme for NodeBB",
+  "description": "Material Design theme for NodeBB WAC",
   "main": "theme.less",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pichalite/nodebb-theme-material"
+    "url": "https://github.com/iDevPro/nodebb-theme-material"
   },
   "keywords": [
     "nodebb",
