@@ -23,7 +23,7 @@
 							<!-- ENDIF children.link -->
 							{children.name}
 							</a><br />
-							<small class="lv-small">{children.description}</small>
+							<small class="lv-small">{children.descriptionParsed}</small>
 			    		</div>
 			    		<!-- IF !children.link -->
 			    		<div class="lv-actions hidden-xs hidden-sm">
@@ -54,14 +54,14 @@
 <div class="row">
 	<!-- BEGIN children -->
 	<div class="<!-- IF children.class -->{children.class}<!-- ELSE -->col-md-3 col-sm-6 col-xs-12<!-- ENDIF children.class -->">
-		<div class="new-card" style="{function.generateCategoryBackground}">
+		<div class="category-card" style="{function.generateCategoryBackground}">
 			<!-- IF children.link -->
 			<a href="{children.link}" itemprop="url" target="_blank">
 			<!-- ELSE -->
 			<a href="{config.relative_path}/category/{children.slug}" itemprop="url">
 			<!-- ENDIF children.link -->			
 
-				<div class="new-card-body">
+				<div class="category-card-body">
 					<ul class="category-counts pull-right">
 	                    <li>
 	                        <i class="fa fa-book"></i><span class="human-readable-number" title="{children.totalTopicCount}"></span>
@@ -75,18 +75,18 @@
 								<i class="fa {children.icon} fa-fw"></i>
 								<!-- ENDIF children.icon -->
 					</h4>
-					<small>{children.description}</small>
+					<small>{children.descriptionParsed}</small>
 				</div>
 			</a>
-			<div class="new-card-footer">
+			<div class="category-card-footer">
 				<!-- BEGIN posts -->				
 				<div component="category/posts">
 					<div class="pull-left hidden-xs user-avatar">
 				    	<a href="{config.relative_path}/user/{children.posts.user.userslug}">
 				        	<!-- IF children.posts.user.picture -->
-  							<img class="user-picture" src="{children.posts.user.picture}" title="{children.posts.user.username}" />
+  							<img class="user-avatar" src="{children.posts.user.picture}" title="{children.posts.user.username}" />
 							<!-- ELSE -->
-							<div class="user-picture user-icon" title="{children.posts.user.username}" style="background-color: {children.posts.user.icon:bgColor}">{children.posts.user.icon:text}</div>
+							<div class="user-icon user-icon" title="{children.posts.user.username}" style="background-color: {children.posts.user.icon:bgColor}">{children.posts.user.icon:text}</div>
 							<!-- ENDIF children.posts.user.picture -->
 				    	</a>
 					</div>

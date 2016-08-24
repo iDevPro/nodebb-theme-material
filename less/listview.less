@@ -25,7 +25,7 @@
 		}
 
 		.checkbox {
-			margin: 2px 0px 0px 0px;
+			margin: 5px 0 0 0;
 		}
 
 		&.media {
@@ -41,11 +41,6 @@
 				margin-top: -15px;
 				top: 50%;
 			}
-
-			@media (max-width: @screen-sm-max) {
-				right: 7px;
-				top: -10px;
-			}
 		}
 	}
 
@@ -54,20 +49,16 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		display: block;
-		font-weight: 500;
+		font-weight: 400;
 		font-size: 16px;
 	}
 
 	a.lv-item:hover {
-		background: #ECF9FF;
+		background: @chat-active-bg-color;
 	}
 
 	.lv-img {
-		width: 40px;
-		height: 40px;
-		border-radius: 50%;
-		line-height: 40px;
-		font-size: 2rem;
+		.user-avatar(40px);
 	}
 
 	.lv-header {
@@ -76,7 +67,7 @@
 		line-height: 100%;
 		border-bottom: 1px solid #F0F0F0;
 		font-weight: 500;
-		color: #4C4C4C;
+		color: @body-color;
 
 		.actions {
 			position: absolute;
@@ -87,12 +78,12 @@
 	}
 
 	.lv-header-alt {
-		background: #f8f8f8;
+		background: @lv-header-alt-bg-color;
 		padding: 12px;
-		border-bottom: 1px solid #EEE;
+		border-bottom: 1px solid @border-color;
 
 		@media (max-width: @screen-xs-max) {
-			padding: 10px 8px;
+			padding: 10px 8px 10px 0;
 		}
 
 		&:before {
@@ -131,7 +122,7 @@
 		display: block;
 		text-align: center;
 		padding: 7px 10px 8px;
-		border-top: 1px solid #F0F0F0;
+		border-top: 1px solid @border-color;
 		line-height: 100%;
 		margin-top: 20px;
 		color: #828282;
@@ -168,7 +159,7 @@
 	}
 
 	&.lv-bordered .lv-item:not(:last-child) {
-		border-bottom: 1px solid #f0f0f0;
+		border-bottom: @lv-item-border;
 	}
 
 	.lv-attrs {
@@ -219,10 +210,6 @@
 			}
 		}
 	}
-
-	&:not(.lv-message) .lv-title {
-		color: #000;
-	}
 }
 
 @media (max-width: @screen-xs-max) {
@@ -256,10 +243,6 @@
 	font-size: 14px
 }
 
-.lv-item.media.unread {
-	  border-left: 2px solid @material-primary;
-}
-
 @media (max-width: @screen-xs-max) {
 	.listview .lv-title, .listview .lv-item .lv-small {
 		white-space: inherit;
@@ -270,4 +253,9 @@
 	.listview .lv-item .media-body .lv-title {
     	padding-bottom: 5px;
     }
+}
+
+.list-group-item {
+	background-color: @list-group-item-bg-color;
+	border: 1px solid @border-color; 
 }

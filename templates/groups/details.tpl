@@ -40,13 +40,13 @@
 				<div class="fg-line">
 				<input class="form-control" type="text" component="groups/members/search" placeholder="[[global:search]]"/>
 				</div>
-				<table component="groups/members" class="table table-striped table-hover members" data-nextstart="{group.membersNextStart}">
+				<table component="groups/members" class="table members" data-nextstart="{group.membersNextStart}">
 					<!-- BEGIN members -->
 					<tr data-uid="{group.members.uid}">
 						<td>
 							<a href="{config.relative_path}/user/{group.members.userslug}">
 								<!-- IF group.members.picture -->
-								<img src="{group.members.picture}" />
+								<img class="user-avatar" src="{group.members.picture}" />
 								<!-- ELSE -->
 								<div class="user-icon" style="background-color: {group.members.icon:bgColor};">{group.members.icon:text}</div>
 								<!-- ENDIF group.members.picture -->
@@ -98,7 +98,7 @@
 				<!-- ENDIF group.pending.length -->
 			</div>
 			<div class="card-body card-padding">
-				<table component="groups/pending" class="table table-striped table-hover pending">
+				<table component="groups/pending" class="table pending">
 					<!-- IF !group.pending.length -->
 					<div class="alert alert-info">[[groups:pending.none]]</div>
 					<!-- ENDIF !group.pending.length -->
@@ -108,7 +108,7 @@
 						<td>
 							<a href="{config.relative_path}/user/{group.pending.userslug}">
 								<!-- IF group.pending.picture -->
-								<img src="{group.pending.picture}" />
+								<img class="user-avatar" src="{group.pending.picture}" />
 								<!-- ELSE -->
 								<div class="user-icon" style="background-color: {group.pending.icon:bgColor};">{group.pending.icon:text}</div>
 								<!-- ENDIF group.pending.picture -->
@@ -142,7 +142,7 @@
 				<div class="fg-line">
 				<input class="form-control" type="text" component="groups/members/invite" placeholder="[[groups:invited.search]]"/>
 				</div>
-				<table component="groups/invited" class="table table-striped table-hover invited">
+				<table component="groups/invited" class="table invited">
 					<!-- IF !group.invited.length -->
 					<div class="alert alert-info">[[groups:invited.none]]</div>
 					<!-- ENDIF !group.invited.length -->
@@ -151,7 +151,7 @@
 						<td>
 							<a href="{config.relative_path}/user/{group.invited.userslug}">
 								<!-- IF group.invited.picture -->
-								<img src="{group.invited.picture}" />
+								<img class="user-avatar" src="{group.invited.picture}" />
 								<!-- ELSE -->
 								<div class="user-icon" style="background-color: {group.invited.icon:bgColor};">{group.invited.icon:text}</div>
 								<!-- ENDIF group.invited.picture -->
@@ -208,7 +208,7 @@
 					</div>
 					<div class="form-group user-title-option">
 						<label>[[groups:details.badge_preview]]</label><br />
-						<span class="label<!-- IF !group.userTitleEnabled --> hide<!-- ENDIF !group.userTitleEnabled -->" style="background-color: {group.labelColor}"><i class="fa {group.icon} icon"></i> <!-- IF group.userTitle -->{group.userTitle}<!-- ELSE -->{group.displayName}<!-- ENDIF group.userTitle --></span>
+						<span class="label<!-- IF !group.userTitleEnabled --> hide<!-- ENDIF !group.userTitleEnabled -->" style="background-color: {group.labelColor}"><i class="fa<!-- IF group.icon --> {group.icon}<!-- ENDIF group.icon --> icon"></i> <!-- IF group.userTitle -->{group.userTitle}<!-- ELSE -->{group.displayName}<!-- ENDIF group.userTitle --></span>
 
 						<button component="groups/userTitleOption" type="button" class="btn btn-default btn-sm" data-action="icon-select"<!-- IF !group.userTitleEnabled --> disabled<!-- ENDIF !group.userTitleEnabled -->>[[groups:details.change_icon]]</button>
 						<button component="groups/userTitleOption" type="button" class="btn btn-default btn-sm" data-action="color-select"<!-- IF !group.userTitleEnabled --> disabled<!-- ENDIF !group.userTitleEnabled -->>[[groups:details.change_colour]]</button>

@@ -1,14 +1,14 @@
 <!-- IF !config.categoriesAsList -->
 <div class="categories row <!-- IF !config.removeCategoriesAnimation --> display-animation<!-- ENDIF !config.removeCategoriesAnimation -->">
 	<!-- BEGIN categories -->
-	<div class="<!-- IF categories.class -->{categories.class}<!-- ELSE -->col-md-3 col-sm-6 col-xs-12<!-- ENDIF categories.class -->">
-		<div class="new-card" style="{function.generateCategoryBackground}">
+	<div component="categories/category" data-cid="{categories.cid}" class="<!-- IF categories.class -->{categories.class}<!-- ELSE -->col-md-3 col-sm-6 col-xs-12<!-- ENDIF categories.class -->">
+		<div class="category-card" style="{function.generateCategoryBackground}">
 			<!-- IF categories.link -->
 				<a href="{categories.link}" itemprop="url" target="_blank" >
 			<!-- ELSE -->
 				<a href="{config.relative_path}/category/{categories.slug}" itemprop="url" >
 			<!-- ENDIF categories.link -->
-				<div class="new-card-body">
+				<div class="category-card-body">
 					<ul class="category-counts pull-right">
 	                    <li>
 	                        <i class="fa fa-book"></i><span class="human-readable-number" title="{categories.totalTopicCount}"></span>
@@ -22,16 +22,16 @@
 								<i class="fa {categories.icon} fa-fw"></i>
 								<!-- ENDIF categories.icon -->
 					</h4>
-					<small>{categories.description}</small>
+					<small>{categories.descriptionParsed}</small>
 				</div>
 			</a>
-			<div class="new-card-footer">
+			<div class="category-card-footer">
 				<!-- BEGIN posts -->
 				<div component="category/posts">
 					<div class="pull-left hidden-xs user-avatar">
 				    	<a href="{config.relative_path}/user/{categories.posts.user.userslug}">
 				        	<!-- IF categories.posts.user.picture -->
-		                    <img src="{categories.posts.user.picture}" alt="{categories.posts.user.username}" title="{categories.posts.user.username}"/>
+		                    <img class="user-avatar" src="{categories.posts.user.picture}" alt="{categories.posts.user.username}" title="{categories.posts.user.username}"/>
 		                    <!-- ELSE -->
 		                    <div class="user-icon" title="{categories.posts.user.username}" style="background-color: {categories.posts.user.icon:bgColor};">{categories.posts.user.icon:text}</div>
 		                    <!-- ENDIF categories.posts.user.picture -->
@@ -55,7 +55,7 @@
 		<div class="listview lv-bordered lv-lg">
 			<div class="lv-body">
 				<!-- BEGIN categories -->
-				<div class="lv-item media row clearfix">
+				<div class="lv-item media row clearfix" component="categories/category" data-cid="{categories.cid}">
 					<div class="col-xs-12 col-sm-8 col-md-7">
 						<div class="icon pull-left" style="{function.generateCategoryBackground}">
 				        	<i class="fa fa-fw {categories.icon}"></i>
@@ -69,7 +69,7 @@
 								<!-- ENDIF categories.link -->
 								{categories.name}
 								</a><br />
-								<small class="lv-small">{categories.description}</small>
+								<small class="lv-small">{categories.descriptionParsed}</small>
 				    		</div>
 				    	</div>
 					</div>
@@ -122,7 +122,7 @@
 										<!-- ENDIF categories.children.link -->
 										{categories.children.name}
 										</a><br />
-										<small class="lv-small">{categories.children.description}</small>
+										<small class="lv-small">{categories.children.descriptionParsed}</small>
 						    		</div>
 						    	</div>
 							</div>

@@ -34,7 +34,7 @@
               transition: color;
               -webkit-transition-duration: 1300ms;
               transition-duration: 1300ms;
-              color: #666;
+              color: @action-items-color;
               font-size: 18px;
             }
 
@@ -163,8 +163,6 @@
     }
 
     .user-picture {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
+        .user-icon(32px, 1.9rem);
     }
 }

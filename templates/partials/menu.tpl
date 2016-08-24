@@ -24,7 +24,7 @@
 
         <!-- IF config.menuInHeader -->
         <li class="hidden-xs">
-            <ul class="header-menu"> 
+            <ul class="header-menu" id="main-nav"> 
                 <!-- BEGIN navigation -->
                 <!-- IF function.displayMenuItem, @index -->
                 <li class="{navigation.class}">
@@ -186,6 +186,17 @@
                         </a>
                     </li>
                     <li role="presentation" class="divider"></li>
+                    <li>
+						<a href="{relative_path}/user/{user.userslug}/edit">
+							<i class="fa fa-fw fa-edit"></i><span> [[user:edit-profile]]</span>
+						</a>
+					</li>
+					<li>
+						<a href="{relative_path}/user/{user.userslug}/settings">
+							<i class="fa fa-fw fa-gear"></i><span> [[user:settings]]</span>
+						</a>
+					</li>
+					<li role="presentation" class="divider"></li>
                     <li component="user/logout">
                         <a href="#"><i class="fa fa-fw fa-sign-out"></i><span> [[global:logout]]</span></a>
                     </li>
@@ -215,7 +226,7 @@
     <aside id="sidebar">
         <div class="sidebar-inner">
             <div class="si-inner">
-                <ul class="main-menu">
+                <ul class="main-menu" id="main-nav">
                     <li id="toggle-width" class="hidden-xs">
                         <div class="toggle-switch">
                             <input id="tw-switch" type="checkbox" hidden="hidden">

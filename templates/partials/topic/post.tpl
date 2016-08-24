@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="post-header">
-                    <a class="pull-left visible-xs" href="{config.relative_path}/user/{posts.user.userslug}">
+                    <a class="pull-left visible-xs user-profile-link" href="{config.relative_path}/user/{posts.user.userslug}">
                         <!-- IF posts.user.picture -->
                         <img src="{posts.user.picture}" class="post-user-picture" title="{posts.user.username}"/>
                         <!-- ELSE -->
@@ -48,7 +48,7 @@
                     </strong>
                     <!-- IMPORT partials/topic/badge.tpl -->
                     <span class="post-time">
-                        <a class="permalink" href="{config.relative_path}/topic/{slug}/{function.getBookmarkFromIndex}"><span class="timeago" title="{posts.timestampISO}"></span></a>
+                        <a class="permalink" href="{config.relative_path}/post/{posts.pid}"><span class="timeago" title="{posts.timestampISO}"></span></a>
 
                         <span class="post-tools">
                             <a component="post/reply" href="#" class="<!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-reply"></i>[[topic:reply]]</a>

@@ -32,9 +32,16 @@
 	}
 }
 
-.account.settings .card .card-header {
-	font-size: 16px;
-	font-weight: 500;
+.account.settings {
+	.card .card-header {
+		font-size: 16px;
+		font-weight: 500;
+	}
+	
+	.form-control {
+		color: inherit;
+		border-bottom: @input-border-bottom;
+	}
 }
 
 .account-username-box {
@@ -97,8 +104,8 @@
 		padding: 20px 20px 20px 30px;
 
 		hr {
-			border: 1px solid #fff;
-			margin: 0px;
+			border: @account-hr-border;
+			margin: 0;
 		}
 
 		@media (max-width: @screen-xs-max) {
@@ -112,7 +119,7 @@
 		.status {
 			left: 140px;
 		    position: absolute;
-		    top: 0px;
+		    top: 0;
 		    border: 1px solid #fff;
 		    height: 18px;
 		    width: 18px;
@@ -135,10 +142,10 @@
 				font-size: 20px;
 
 				@media (max-width: @screen-xs-max) {
-					color: #000;
+					color: @body-color;
 					margin-top: 10px;
 					font-size: 16px;
-					text-align: left;
+					text-align: center;
 					margin-bottom: 2px;
 				}
 			}
@@ -148,18 +155,17 @@
 
 				@media (max-width: @screen-xs-max) {
 					font-size: 11px;
-					text-align: left;
-					margin-top: 0px;
-					margin-bottom: 0px;
+					text-align: center;
+					margin-top: 0;
+					margin-bottom: 0;
 				}
 			}
 
 			@media (max-width: @screen-xs-max) {
-			    position: absolute;
-			    top: 25px;
-			    left: ~"calc(50% - 30px)";
-				min-width: 120px;
-				margin-left: 0px;
+			    position: relative;
+			    top: -190px;
+				margin-left: 0;
+				float: none;
 			}
 		}
 
@@ -172,13 +178,12 @@
 				min-width: 100px;
 
 				@media (max-width: @screen-xs-max) {
-					padding: 10px 0px;
+					padding: 10px 0;
 				}
 			}
 
 			.stat-label {
 				font-size: 14px;
-				color: #333;
 			}
 
 			.human-readable-number {
@@ -194,11 +199,11 @@
 		
 		[component="account/chat"], [component="account/follow"], [component="account/unfollow"] {
 			float: left;
-			margin: 15px 5px 0px;
+			margin: 15px 5px 0;
 			
 			@media (max-width: @screen-xs-max) {
 				float: inherit;
-				margin: 0px 5px 15px 5px;
+				margin: 0 5px 15px 5px;
 			}
 		}
 	}
@@ -323,5 +328,33 @@
 		margin-top: 10px;
 		padding-right: 3px;
 		padding-left: 5px;
+	}
+}
+
+.account {
+	&.account-info {
+		.ban-history {
+			padding-left: 0;
+			
+			.timestamp {
+				font-weight: bold;
+			}
+			
+			.expiry {
+				font-size: 11px;
+			}
+		}
+		
+		.recent-flags {
+			padding-left: 0;
+			
+			.title {
+				font-weight: bold;
+			}
+			
+			.timestamp {
+				font-size: 11px;
+			}
+		}
 	}
 }
